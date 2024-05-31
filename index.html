@@ -388,15 +388,77 @@ cd my-new-project</code></pre>
         
         <section id="common-issues">
             <h2>Common Issues and Solutions</h2>
-            <h3>Bundling Errors</h3>
-            <p>Common bundling errors and how to resolve them.</p>
+        
+            <details>
+                <summary><h3>Bundling Errors</h3></summary>
+                <p>Common bundling errors and how to resolve them:</p>
+                <ul>
+                    <li>
+                        <strong>Error:</strong> Android resource linking failed - <code>resource style/AppTheme.AppBarOverlay not found</code>
+                        <br>
+                        <strong>Why it happens:</strong> This error occurs when a style resource referenced in your XML layout file is not defined in your project's <code>styles.xml</code> file.
+                        <br>
+                        <strong>Solution:</strong> Ensure you have the correct styles defined in your <code>styles.xml</code> file. If the style doesn't exist, add it or correct the reference.
+                    </li>
+                    <li>
+                        <strong>Error:</strong> Android resource linking failed - <code>resource color/colorPrimary not found</code>
+                        <br>
+                        <strong>Why it happens:</strong> This error occurs when a color resource referenced in your XML layout file is not defined in your project's <code>colors.xml</code> file.
+                        <br>
+                        <strong>Solution:</strong> Ensure you have the correct colors defined in your <code>colors.xml</code> file. If the color doesn't exist, add it or correct the reference.
+                    </li>
+                    <li>
+                        <strong>Error:</strong> Too many characters in a character literal
+                        <br>
+                        <strong>Why it happens:</strong> This error occurs when string values are incorrectly formatted in the <code>build.gradle</code> dependencies.
+                        <br>
+                        <strong>Solution:</strong> Use double quotes for string values in your <code>build.gradle</code> dependencies, for example: <code>implementation("com.google.android.material:material:1.4.0")</code>.
+                    </li>
+                </ul>
+            </details>
             
-            <h3>Module Resolution</h3>
-            <p>Tips for resolving module import issues.</p>
+            <details>
+                <summary><h3>Module Resolution</h3></summary>
+                <p>Tips for resolving module import issues:</p>
+                <ul>
+                    <li>
+                        <strong>Error:</strong> Cannot find symbol variable toolbar
+                        <br>
+                        <strong>Why it happens:</strong> This error occurs when the toolbar is not correctly defined or referenced in your Java/Kotlin code.
+                        <br>
+                        <strong>Solution:</strong> Ensure the toolbar is correctly defined in your layout XML file with the correct ID and referenced properly in your Java/Kotlin code. For example, make sure <code>findViewById(R.id.toolbar)</code> is correctly set up.
+                    </li>
+                    <li>
+                        <strong>Error:</strong> Cannot find symbol variable fab
+                        <br>
+                        <strong>Why it happens:</strong> This error occurs when the FloatingActionButton (FAB) is not correctly defined or referenced in your Java/Kotlin code.
+                        <br>
+                        <strong>Solution:</strong> Ensure the FAB is correctly defined in your layout XML file with the correct ID and referenced properly in your Java/Kotlin code. For example, make sure <code>findViewById(R.id.fab)</code> is correctly set up.
+                    </li>
+                </ul>
+            </details>
             
-            <h3>Expo CLI Commands</h3>
-            <p>Explanation of useful Expo CLI commands and how to use them.</p>
+            <details>
+                <summary><h3>Expo CLI Commands</h3></summary>
+                <p>Explanation of useful Expo CLI commands and how to use them:</p>
+                <ul>
+                    <li>
+                        <strong>expo start</strong> - Start the Expo development server. This command launches the development environment where you can preview and interact with your app in real-time on connected devices or simulators. It also provides access to the Expo Developer Tools in your browser.
+                    </li>
+                    <li>
+                        <strong>expo build:android</strong> - Build the Android APK or AAB. This command initiates the process of building your Expo project into a standalone Android application package (APK) or Android App Bundle (AAB) that can be distributed and installed on Android devices.
+                    </li>
+                    <li>
+                        <strong>expo build:ios</strong> - Build the iOS IPA. This command starts the build process for creating a standalone iOS application archive (IPA) that can be installed on iOS devices or submitted to the Apple App Store. Note that building for iOS requires a macOS environment or an Expo managed service.
+                    </li>
+                    <li>
+                        <strong>expo publish</strong> - Publish your Expo project. This command uploads your current Expo project to the Expo servers, making it accessible via a URL. This is useful for sharing your app with others without needing to build standalone binaries.
+                    </li>
+                </ul>
+            </details>
         </section>
+    
+        
         
         <section id="resources">
             <h2>Resources</h2>
