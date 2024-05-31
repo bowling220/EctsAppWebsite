@@ -227,164 +227,185 @@ export default HomeScreen;
         
         <section id="builds">
             <h2>iOS and Android Builds</h2>
-            
+        
             <h3>Expo Build</h3>
-<p>Detailed guide on using Expo Application Services (EAS) to build and deploy your app.</p>
-
-<h4>Introduction</h4>
-<p>This guide provides a detailed walkthrough on using Expo Application Services (EAS) to build and deploy your app efficiently. EAS offers a suite of tools and services that simplify the development, build, and deployment processes for React Native and Expo projects.</p>
-
-<h4>Prerequisites</h4>
-<p>Before you start, ensure you have the following:</p>
-<ul>
-  <li>Node.js installed</li>
-  <li>Expo CLI installed (<code>npm install -g expo-cli</code>)</li>
-  <li>An Expo account</li>
-  <li>A working React Native or Expo project</li>
-</ul>
-
-<h4>Step-by-Step Guide</h4>
-
-<h5>1. Initialize Your Project</h5>
-<p>If you haven't already, initialize your Expo project:</p>
-<pre><code>expo init my-new-project
-cd my-new-project</code></pre>
-
-<h5>2. Install EAS CLI</h5>
-<p>Install the EAS CLI globally:</p>
-<pre><code>npm install -g eas-cli</code></pre>
-
-<h5>3. Configure EAS</h5>
-<p>Log in to your Expo account:</p>
-<pre><code>eas login</code></pre>
-<p>Run the EAS configuration command in your project directory:</p>
-<pre><code>eas build:configure</code></pre>
-<p>This creates an <code>eas.json</code> file in your project, where you can configure your build settings.</p>
-
-<h5>4. Build Your App</h5>
-<p>You can now build your app for different platforms. Run the following command to start a build for iOS:</p>
-<pre><code>eas build --platform ios</code></pre>
-<p>And for Android:</p>
-<pre><code>eas build --platform android</code></pre>
-
-<h5>5. Manage Build Profiles</h5>
-<p>Customize your build profiles in the <code>eas.json</code> file. You can create different profiles for development, staging, and production:</p>
-<pre><code>{
-  "build": {
-    "development": {
-      "releaseChannel": "development",
-      "distribution": "internal"
-    },
-    "production": {
-      "releaseChannel": "default",
-      "distribution": "store"
-    }
-  }
-}</code></pre>
-
-<h5>6. Monitoring and Debugging</h5>
-<p>Monitor your build progress on the Expo dashboard: <a href="https://expo.dev/accounts/YOUR-USERNAME/projects/YOUR-PROJECT/builds">Expo Build Dashboard</a></p>
-<p>You can also use the EAS CLI to check the status of your builds:</p>
-<pre><code>eas build:list</code></pre>
-
-<h5>7. Deploy Your App</h5>
-<p>Once your build is complete, you can deploy your app. For iOS, you'll need to submit your app to the App Store using Transporter or Xcode. For Android, you can upload the APK or AAB file directly to the Google Play Console.</p>
-
-<h4>Conclusion</h4>
-<p>Using EAS, you can streamline your app build and deployment process, ensuring a smooth transition from development to production. For more detailed configurations and advanced usage, refer to the <a href="https://docs.expo.dev/eas/">official EAS documentation</a>.</p>
-
-<h4>Additional Resources</h4>
-<ul>
-  <li><a href="https://docs.expo.dev/">Expo Documentation</a></li>
-  <li><a href="https://docs.expo.dev/build/eas-json/">EAS Build Configuration</a></li>
-  <li><a href="https://forums.expo.dev/">Expo Community Forums</a></li>
-</ul>
+            <p>Detailed guide on using Expo Application Services (EAS) to build and deploy your app.</p>
+        
+            <details>
+                <summary>Introduction</summary>
+                <p>This guide provides a detailed walkthrough on using Expo Application Services (EAS) to build and deploy your app efficiently. EAS offers a suite of tools and services that simplify the development, build, and deployment processes for React Native and Expo projects.</p>
+            </details>
+        
+            <details>
+                <summary>Prerequisites</summary>
+                <p>Before you start, ensure you have the following:</p>
+                <ul>
+                    <li>Node.js installed</li>
+                    <li>Expo CLI installed (<code>npm install -g expo-cli</code>)</li>
+                    <li>An Expo account</li>
+                    <li>A working React Native or Expo project</li>
+                </ul>
+            </details>
+        
+            <details>
+                <summary>Step-by-Step Guide</summary>
+                <h5>1. Initialize Your Project</h5>
+                <p>If you haven't already, initialize your Expo project:</p>
+                <pre><code>expo init my-new-project
+        cd my-new-project</code></pre>
+        
+                <h5>2. Install EAS CLI</h5>
+                <p>Install the EAS CLI globally:</p>
+                <pre><code>npm install -g eas-cli</code></pre>
+        
+                <h5>3. Configure EAS</h5>
+                <p>Log in to your Expo account:</p>
+                <pre><code>eas login</code></pre>
+                <p>Run the EAS configuration command in your project directory:</p>
+                <pre><code>eas build:configure</code></pre>
+                <p>This creates an <code>eas.json</code> file in your project, where you can configure your build settings.</p>
+        
+                <h5>4. Build Your App</h5>
+                <p>You can now build your app for different platforms. Run the following command to start a build for iOS:</p>
+                <pre><code>eas build --platform ios</code></pre>
+                <p>And for Android:</p>
+                <pre><code>eas build --platform android</code></pre>
+        
+                <h5>5. Manage Build Profiles</h5>
+                <p>Customize your build profiles in the <code>eas.json</code> file. You can create different profiles for development, staging, and production:</p>
+                <pre><code>{
+          "build": {
+            "development": {
+              "releaseChannel": "development",
+              "distribution": "internal"
+            },
+            "production": {
+              "releaseChannel": "default",
+              "distribution": "store"
+            }
+          }
+        }</code></pre>
+        
+                <h5>6. Monitoring and Debugging</h5>
+                <p>Monitor your build progress on the Expo dashboard: <a href="https://expo.dev/accounts/YOUR-USERNAME/projects/YOUR-PROJECT/builds">Expo Build Dashboard</a></p>
+                <p>You can also use the EAS CLI to check the status of your builds:</p>
+                <pre><code>eas build:list</code></pre>
+        
+                <h5>7. Deploy Your App</h5>
+                <p>Once your build is complete, you can deploy your app. For iOS, you'll need to submit your app to the App Store using Transporter or Xcode. For Android, you can upload the APK or AAB file directly to the Google Play Console.</p>
+            </details>
+        
+            <details>
+                <summary>Conclusion</summary>
+                <p>Using EAS, you can streamline your app build and deployment process, ensuring a smooth transition from development to production. For more detailed configurations and advanced usage, refer to the <a href="https://docs.expo.dev/eas/">official EAS documentation</a>.</p>
+            </details>
+        
+            <details>
+                <summary>Additional Resources</summary>
+                <ul>
+                    <li><a href="https://docs.expo.dev/">Expo Documentation</a></li>
+                    <li><a href="https://docs.expo.dev/build/eas-json/">EAS Build Configuration</a></li>
+                    <li><a href="https://forums.expo.dev/">Expo Community Forums</a></li>
+                </ul>
+            </details>
+        
             <h3>Building for iOS with TestFlight</h3>
-            <ol>
-                <li>Open your terminal and navigate to your project directory.</li>
-                <li>Run the following command to build your app for iOS:
-                    <pre><code>eas build -p ios</code></pre>
-                </li>
-                <li>Follow the prompts to authenticate with your Apple Developer account and configure your build.</li>
-                <li>Once the build is complete, you'll receive a link to your build in the Expo dashboard.</li>
-                <li>In the Expo dashboard, click on the build and then click "Submit to App Store."</li>
-                <li>Follow the prompts to configure your app for submission to TestFlight.</li>
-                <li>Once submitted, your app will be reviewed by Apple. Once approved, it will be available in TestFlight.</li>
-                <li>Invite testers via the TestFlight dashboard by adding their email addresses.</li>
-            </ol>
-            
+            <details>
+                <summary>Instructions</summary>
+                <ol>
+                    <li>Open your terminal and navigate to your project directory.</li>
+                    <li>Run the following command to build your app for iOS:
+                        <pre><code>eas build -p ios</code></pre>
+                    </li>
+                    <li>Follow the prompts to authenticate with your Apple Developer account and configure your build.</li>
+                    <li>Once the build is complete, you'll receive a link to your build in the Expo dashboard.</li>
+                    <li>In the Expo dashboard, click on the build and then click "Submit to App Store."</li>
+                    <li>Follow the prompts to configure your app for submission to TestFlight.</li>
+                    <li>Once submitted, your app will be reviewed by Apple. Once approved, it will be available in TestFlight.</li>
+                    <li>Invite testers via the TestFlight dashboard by adding their email addresses.</li>
+                </ol>
+            </details>
+        
             <h3>Android Studio Setup</h3>
-            <p>Instructions for preparing your app for submission to the Google Play Store.</p>
-            
-            <h4>Introduction</h4>
-            <p>This guide provides step-by-step instructions for setting up Android Studio to prepare your app for submission to the Google Play Store. Proper configuration and understanding of Android Studio are essential to ensure a smooth deployment process.</p>
-            
-            <h4>Prerequisites</h4>
-            <p>Before you start, ensure you have the following:</p>
-            <ul>
-              <li>Android Studio installed</li>
-              <li>A working Android project</li>
-              <li>A Google Play Developer account</li>
-            </ul>
-            
-            <h4>Step-by-Step Guide</h4>
-            
-            <h5>1. Install Android Studio</h5>
-            <p>If you haven't installed Android Studio yet, download and install it from the <a href="https://developer.android.com/studio">official Android Studio website</a>. Follow the installation instructions specific to your operating system.</p>
-            
-            <h5>2. Open Your Project in Android Studio</h5>
-            <p>Launch Android Studio and open your existing Android project:</p>
-            <pre><code>File &gt; Open &gt; Select your project directory</code></pre>
-            
-            <h5>3. Configure Your Project</h5>
-            <p>Ensure your project is configured correctly for release. Update your <code>build.gradle</code> files as needed, particularly the following sections:</p>
-            <ul>
-              <li><strong>App-level <code>build.gradle</code>:</strong> Update versioning information and ensure signing configurations are in place.</li>
-              <li><strong>Project-level <code>build.gradle</code>:</strong> Verify the repositories and dependencies are correctly set up.</li>
-            </ul>
-            
-            <h5>4. Generate a Signed APK or AAB</h5>
-            <p>To generate a signed APK or AAB for release:</p>
-            <ol>
-              <li>Go to <code>Build &gt; Generate Signed Bundle / APK...</code></li>
-              <li>Select either <code>Android App Bundle</code> or <code>APK</code> and click <code>Next</code></li>
-              <li>Choose/create a key store, select your key, and enter your key credentials</li>
-              <li>Set the Destination Folder and Build Variants</li>
-              <li>Click <code>Finish</code> to generate the signed APK or AAB</li>
-            </ol>
-            
-            <h5>5. Test Your Release Build</h5>
-            <p>Before submitting to the Google Play Store, thoroughly test your release build to ensure it works as expected. Install the APK or AAB on a physical device or emulator and check for any issues.</p>
-            
-            <h5>6. Prepare Store Listing</h5>
-            <p>Prepare the following assets for your Google Play Store listing:</p>
-            <ul>
-              <li>App icon</li>
-              <li>Screenshots</li>
-              <li>Promotional graphics (if applicable)</li>
-              <li>App description and details</li>
-            </ul>
-            
-            <h5>7. Upload to Google Play Console</h5>
-            <p>Sign in to your <a href="https://play.google.com/console">Google Play Console</a> and follow these steps to submit your app:</p>
-            <ol>
-              <li>Create a new application and fill in the necessary details</li>
-              <li>Upload your APK or AAB file under the <code>Release management</code> section</li>
-              <li>Complete the content rating questionnaire</li>
-              <li>Set up pricing and distribution</li>
-              <li>Review and publish your app</li>
-            </ol>
-            
-            <h4>Conclusion</h4>
-            <p>Following these steps will help you set up Android Studio and prepare your app for submission to the Google Play Store. Proper setup and thorough testing are crucial for a successful release.</p>
-            
-            <h4>Additional Resources</h4>
-            <ul>
-              <li><a href="https://developer.android.com/studio">Android Studio Documentation</a></li>
-              <li><a href="https://developer.android.com/distribute/console">Google Play Console Help</a></li>
-              <li><a href="https://developer.android.com/guide">Android Developer Guide</a></li>
-            </ul>
+            <details>
+                <summary>Introduction</summary>
+                <p>This guide provides step-by-step instructions for setting up Android Studio to prepare your app for submission to the Google Play Store. Proper configuration and understanding of Android Studio are essential to ensure a smooth deployment process.</p>
+            </details>
+        
+            <details>
+                <summary>Prerequisites</summary>
+                <p>Before you start, ensure you have the following:</p>
+                <ul>
+                    <li>Android Studio installed</li>
+                    <li>A working Android project</li>
+                    <li>A Google Play Developer account</li>
+                </ul>
+            </details>
+        
+            <details>
+                <summary>Step-by-Step Guide</summary>
+                <h5>1. Install Android Studio</h5>
+                <p>If you haven't installed Android Studio yet, download and install it from the <a href="https://developer.android.com/studio">official Android Studio website</a>. Follow the installation instructions specific to your operating system.</p>
+        
+                <h5>2. Open Your Project in Android Studio</h5>
+                <p>Launch Android Studio and open your existing Android project:</p>
+                <pre><code>File &gt; Open &gt; Select your project directory</code></pre>
+        
+                <h5>3. Configure Your Project</h5>
+                <p>Ensure your project is configured correctly for release. Update your <code>build.gradle</code> files as needed, particularly the following sections:</p>
+                <ul>
+                    <li><strong>App-level <code>build.gradle</code>:</strong> Update versioning information and ensure signing configurations are in place.</li>
+                    <li><strong>Project-level <code>build.gradle</code>:</strong> Verify the repositories and dependencies are correctly set up.</li>
+                </ul>
+        
+                <h5>4. Generate a Signed APK or AAB</h5>
+                <p>To generate a signed APK or AAB for release:</p>
+                <ol>
+                    <li>Go to <code>Build &gt; Generate Signed Bundle / APK...</code></li>
+                    <li>Select either <code>Android App Bundle</code> or <code>APK</code> and click <code>Next</code></li>
+                    <li>Choose/create a key store, select your key, and enter your key credentials</li>
+                    <li>Set the Destination Folder and Build Variants</li>
+                    <li>Click <code>Finish</code> to generate the signed APK or AAB</li>
+                </ol>
+        
+                <h5>5. Test Your Release Build</h5>
+                <p>Before submitting to the Google Play Store, thoroughly test your release build to ensure it works as expected. Install the APK or AAB on a physical device or emulator and check for any issues.</p>
+        
+                <h5>6. Prepare Store Listing</h5>
+                <p>Prepare the following assets for your Google Play Store listing:</p>
+                <ul>
+                    <li>App icon</li>
+                    <li>Screenshots</li>
+                    <li>Promotional graphics (if applicable)</li>
+                    <li>App description and details</li>
+                </ul>
+        
+                <h5>7. Upload to Google Play Console</h5>
+                <p>Sign in to your <a href="https://play.google.com/console">Google Play Console</a> and follow these steps to submit your app:</p>
+                <ol>
+                    <li>Create a new application and fill in the necessary details</li>
+                    <li>Upload your APK or AAB file under the <code>Release management</code> section</li>
+                    <li>Complete the content rating questionnaire</li>
+                    <li>Set up pricing and distribution</li>
+                    <li>Review and publish your app</li>
+                </ol>
+            </details>
+        
+            <details>
+                <summary>Conclusion</summary>
+                <p>Following these steps will help you set up Android Studio and prepare your app for submission to the Google Play Store. Proper setup and thorough testing are crucial for a successful release.</p>
+            </details>
+        
+            <details>
+                <summary>Additional Resources</summary>
+                <ul>
+                    <li><a href="https://developer.android.com/studio">Android Studio Documentation</a></li>
+                    <li><a href="https://developer.android.com/distribute/console">Google Play Console Help</a></li>
+                    <li><a href="https://developer.android.com/guide">Android Developer Guide</a></li>
+                </ul>
+            </details>
         </section>
+        
         
         <section id="common-issues">
             <h2>Common Issues and Solutions</h2>
