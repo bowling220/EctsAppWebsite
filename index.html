@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Development Guide</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>App Development Guide</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#getting-started">Getting Started</a></li>
+                <li><a href="#building-app">Building a Simple App</a></li>
+                <li><a href="#advanced-topics">Advanced Topics</a></li>
+                <li><a href="#builds">iOS and Android Builds</a></li>
+                <li><a href="#common-issues">Common Issues</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="home">
+            <h2>Welcome</h2>
+            <p>Hello, I'm ρꪻ᭙ | ᥇ꪶꪖ꠸ꪀꫀ, and I've created this website to help you on your journey to becoming a successful app developer. Here, you'll find detailed guides, tips, and resources based on my personal experience.</p>
+        </section>
+        
+        <section id="getting-started">
+            <h2>Getting Started</h2>
+            <h3>Prerequisites</h3>
+            <ul>
+                <li>Node.js</li>
+                <li>Visual Studio Code</li>
+                <li>Expo CLI</li>
+                <li>Xcode (for macOS users)</li>
+            </ul>
+            
+            <h3>Setting Up on Windows</h3>
+            <ol>
+                <li>Install Node.js from <a href="https://nodejs.org/">nodejs.org</a>.</li>
+                <li>Install Visual Studio Code from <a href="https://code.visualstudio.com/">code.visualstudio.com</a>.</li>
+                <li>Open your terminal and install Expo CLI by running:
+                    <pre><code>npm install -g expo-cli</code></pre>
+                </li>
+            </ol>
+            
+            <h3>Setting Up on macOS</h3>
+            <ol>
+                <li>Install Node.js from <a href="https://nodejs.org/">nodejs.org</a>.</li>
+                <li>Install Visual Studio Code from <a href="https://code.visualstudio.com/">code.visualstudio.com</a>.</li>
+                <li>Install Xcode from the Mac App Store.</li>
+                <li>Open your terminal and install Expo CLI by running:
+                    <pre><code>npm install -g expo-cli</code></pre>
+                </li>
+            </ol>
+        </section>
+        
+        <section id="building-app">
+            <h2>Building a Simple App</h2>
+            <h3>Initializing a New Project</h3>
+            <ol>
+                <li>Open your terminal and run the following command:
+                    <pre><code>npx expo init MyNewApp</code></pre>
+                </li>
+                <li>Choose a template (e.g., blank).</li>
+                <li>Navigate to your project directory:
+                    <pre><code>cd MyNewApp</code></pre>
+                </li>
+                <li>Start the development server:
+                    <pre><code>npx expo start</code></pre>
+                </li>
+            </ol>
+        </section>
+        
+        <section id="advanced-topics">
+            <h2>Advanced Topics</h2>
+            <h3>API Integration: Fetching Data</h3>
+            <p>To fetch data from an API and display it in your app, follow these steps:</p>
+            
+            <ol>
+                <li>Install axios for making HTTP requests:
+                    <pre><code>npm install axios</code></pre>
+                </li>
+                <li>Create an <code>api.js</code> file in your project directory with the following content:
+                    <pre><code>
+import axios from 'axios';
+
+const API_URL = 'https://example.com/api';
+
+export const fetchPosts = async () => {
+    try {
+        const response = await axios.get(`${API_URL}/posts`);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching posts:', error);
+        return [];
+    }
+};
+                    </code></pre>
+                </li>
+                <li>Use the <code>fetchPosts</code> function in your component to fetch and display data:
+                    <pre><code>
+import React, { useEffect, useState } from 'react';
+import { View, Text } from 'react-native';
+import { fetchPosts } from './api';
+
+const HomeScreen = () => {
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        const loadPosts = async () => {
+            const data = await fetchPosts();
+            setPosts(data);
+        };
+        loadPosts();
+    }, []);
+
+    return (
+        <View>
+            {posts.map(post => (
+                <View key={post.id}>
+                    <Text>{post.title}</Text>
+                </View>
+            ))}
+        </View>
+    );
+};
+
+export default HomeScreen;
+                    </code></pre>
+                </li>
+            </ol>
+        </section>
+        
+        <section id="builds">
+            <h2>iOS and Android Builds</h2>
+            <h3>Expo Build</h3>
+            <p>Detailed guide on using Expo Application Services (EAS) to build and deploy your app.</p>
+            
+            <h3>Xcode Setup</h3>
+            <p>Instructions for preparing your app for submission to the App Store using Xcode.</p>
+            
+            <h3>Android Studio Setup</h3>
+            <p>Instructions for preparing your app for submission to the Google Play Store.</p>
+        </section>
+        
+        <section id="common-issues">
+            <h2>Common Issues and Solutions</h2>
+            <h3>Bundling Errors</h3>
+            <p>Common bundling errors and how to resolve them.</p>
+            
+            <h3>Module Resolution</h3>
+            <p>Tips for resolving module import issues.</p>
+            
+            <h3>Expo CLI Commands</h3>
+            <p>Explanation of useful Expo CLI commands and how to use them.</p>
+        </section>
+        
+        <section id="resources">
+            <h2>Resources</h2>
+            <ul>
+                <li><a href="https://reactnative.dev/">React Native Documentation</a></li>
+                <li><a href="https://docs.expo.dev/">Expo Documentation</a></li>
+                <li><a href="https://stackoverflow.com/">Stack Overflow</a></li>
+                <li><a href="https://www.udemy.com/">Udemy</a></li>
+                <li><a href="https://www.youtube.com/">YouTube</a></li>
+            </ul>
+        </section>
+        
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>If you have any questions or feedback, feel free to reach out to me through the form below.</p>
+            <form>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name"><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message"></textarea><br>
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 ᥇ꪶꪖ꠸ꪀꫀ. All rights reserved.</p>
+    </footer>
+</body>
+</html>
