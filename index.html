@@ -26,7 +26,7 @@
     <main>
         <section id="home">
             <h2>Welcome</h2>
-            <p>Hello, I'm ρꪻ᭙ | ᥇ꪶꪖ꠸ꪀꫀ, and I've created this website to help you on your journey to becoming a successful app developer. Here, you'll find detailed guides, tips, and resources based on my personal experience.</p>
+            <p>Hello, I'm ᥇ꪶꪖ꠸ꪀꫀ, and I've created this website to help you on your journey to becoming a successful app developer. Here, you'll find detailed guides, tips, and resources based on my personal experience.</p>
         </section>
         
         <section id="getting-started">
@@ -61,9 +61,10 @@
         
         <section id="building-app">
             <h2>Building a Simple App</h2>
+            
             <h3>Initializing a New Project</h3>
             <ol>
-                <li>Open your terminal and run the following command:
+                <li>Open your terminal and run the following command to create a new Expo project named 'MyNewApp':
                     <pre><code>npx expo init MyNewApp</code></pre>
                 </li>
                 <li>Choose a template (e.g., blank).</li>
@@ -74,7 +75,20 @@
                     <pre><code>npx expo start</code></pre>
                 </li>
             </ol>
+        
+            <h2>Running the App on Your iOS or Android Device</h2>
+            <p>If you would like to run the app on your iPhone or Android device, follow these steps:</p>
+        
+            <ol>
+                <li>Make sure you have Expo Go installed on your device. Expo Go is available on the App Store for iOS devices and on Google Play Store for Android devices. Download and install it if you haven't already.</li>
+                <li>Open the Expo Go app on your device.</li>
+                <li>Scan the QR code displayed in the terminal or Expo Dev Tools browser window when you run the command:
+                    <pre><code>npx expo start --tunnel</code></pre>
+                </li>
+                <li>Your app will be compiled and loaded on your device via the Expo Go app.</li>
+            </ol>
         </section>
+        
         
         <section id="advanced-topics">
             <h2>Advanced Topics</h2>
