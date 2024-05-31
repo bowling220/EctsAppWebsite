@@ -9,114 +9,75 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
         }
-
         header {
             background-color: #333;
-            color: #fff;
-            padding: 10px 0;
+            color: white;
+            padding: 1em 0;
             text-align: center;
         }
-
-        header h1 {
-            margin: 0;
-        }
-
-        nav {
-            position: relative;
-        }
-
         nav ul {
             list-style: none;
             padding: 0;
-            margin: 0;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
         }
-
         nav ul li {
-            margin: 10px;
+            margin: 0 1em;
         }
-
         nav ul li a {
-            color: #fff;
+            color: white;
             text-decoration: none;
         }
-
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            position: absolute;
-            top: 10px;
-            right: 20px;
-        }
-
-        .menu-toggle div {
-            width: 30px;
-            height: 3px;
-            background-color: #fff;
-            margin: 5px 0;
-        }
-
         main {
-            padding: 20px;
+            padding: 1em;
         }
-
-        main h2 {
-            color: #333;
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.3em;
         }
-
-        main section {
-            margin-bottom: 20px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
         pre {
-            background-color: #f4f4f4;
-            padding: 10px;
-            border-radius: 5px;
+            background: #f4f4f4;
+            padding: 1em;
+            overflow-x: auto;
         }
-
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background-color: #333;
-            color: #fff;
-            position: fixed;
-            bottom: 0;
+        form {
+            max-width: 500px;
+            margin: 1em auto;
+        }
+        label, input, textarea {
             width: 100%;
+            margin-bottom: 1em;
         }
-
+        input[type="submit"] {
+            width: auto;
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
         @media (max-width: 600px) {
-            .menu-toggle {
-                display: flex;
-            }
-
             nav ul {
                 flex-direction: column;
-                display: none;
-                width: 100%;
-                text-align: center;
-                background-color: #333;
+                align-items: center;
             }
-
             nav ul li {
-                margin: 0;
+                margin: 0.5em 0;
             }
-
-            nav ul li a {
-                display: block;
-                padding: 10px 0;
-            }
-
-            nav ul.active {
-                display: flex;
+            pre {
+                padding: 0.5em;
             }
         }
     </style>
@@ -125,12 +86,7 @@
     <header>
         <h1>App Development Guide</h1>
         <nav>
-            <div class="menu-toggle" id="menu-toggle">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <ul id="menu">
+            <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#getting-started">Getting Started</a></li>
                 <li><a href="#building-app">Building a Simple App</a></li>
@@ -323,14 +279,5 @@ export default HomeScreen;
     <footer>
         <p>&copy; 2024 ᥇ꪶꪖ꠸ꪀꫀ. All rights reserved.</p>
     </footer>
-    
-    <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const menu = document.getElementById('menu');
-        
-        menuToggle.addEventListener('click', () => {
-            menu.classList.toggle('active');
-        });
-    </script>
 </body>
 </html>
