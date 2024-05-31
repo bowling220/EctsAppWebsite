@@ -271,27 +271,12 @@ export default HomeScreen;
                 <p>And for Android:</p>
                 <pre><code>eas build --platform android</code></pre>
         
-                <h5>5. Manage Build Profiles</h5>
-                <p>Customize your build profiles in the <code>eas.json</code> file. You can create different profiles for development, staging, and production:</p>
-                <pre><code>{
-          "build": {
-            "development": {
-              "releaseChannel": "development",
-              "distribution": "internal"
-            },
-            "production": {
-              "releaseChannel": "default",
-              "distribution": "store"
-            }
-          }
-        }</code></pre>
-        
-                <h5>6. Monitoring and Debugging</h5>
+                <h5>5. Monitoring and Debugging</h5>
                 <p>Monitor your build progress on the Expo dashboard: <a href="https://expo.dev/accounts/YOUR-USERNAME/projects/YOUR-PROJECT/builds">Expo Build Dashboard</a></p>
                 <p>You can also use the EAS CLI to check the status of your builds:</p>
                 <pre><code>eas build:list</code></pre>
         
-                <h5>7. Deploy Your App</h5>
+                <h5>6. Deploy Your App</h5>
                 <p>Once your build is complete, you can deploy your app. For iOS, you'll need to submit your app to the App Store using Transporter or Xcode. For Android, you can upload the APK or AAB file directly to the Google Play Console.</p>
             </details>
         
