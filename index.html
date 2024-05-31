@@ -165,7 +165,6 @@
             </ol>
         </section>
         
-        
         <section id="advanced-topics">
             <h2>Advanced Topics</h2>
             <h3>API Integration: Fetching Data</h3>
@@ -228,8 +227,23 @@ export default HomeScreen;
         
         <section id="builds">
             <h2>iOS and Android Builds</h2>
+            
             <h3>Expo Build</h3>
             <p>Detailed guide on using Expo Application Services (EAS) to build and deploy your app.</p>
+            
+            <h3>Building for iOS with TestFlight</h3>
+            <ol>
+                <li>Open your terminal and navigate to your project directory.</li>
+                <li>Run the following command to build your app for iOS:
+                    <pre><code>eas build -p ios</code></pre>
+                </li>
+                <li>Follow the prompts to authenticate with your Apple Developer account and configure your build.</li>
+                <li>Once the build is complete, you'll receive a link to your build in the Expo dashboard.</li>
+                <li>In the Expo dashboard, click on the build and then click "Submit to App Store."</li>
+                <li>Follow the prompts to configure your app for submission to TestFlight.</li>
+                <li>Once submitted, your app will be reviewed by Apple. Once approved, it will be available in TestFlight.</li>
+                <li>Invite testers via the TestFlight dashboard by adding their email addresses.</li>
+            </ol>
             
             <h3>Xcode Setup</h3>
             <p>Instructions for preparing your app for submission to the App Store using Xcode.</p>
