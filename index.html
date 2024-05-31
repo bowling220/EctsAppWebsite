@@ -229,8 +229,76 @@ export default HomeScreen;
             <h2>iOS and Android Builds</h2>
             
             <h3>Expo Build</h3>
-            <p>Detailed guide on using Expo Application Services (EAS) to build and deploy your app.</p>
-            
+<p>Detailed guide on using Expo Application Services (EAS) to build and deploy your app.</p>
+
+<h4>Introduction</h4>
+<p>This guide provides a detailed walkthrough on using Expo Application Services (EAS) to build and deploy your app efficiently. EAS offers a suite of tools and services that simplify the development, build, and deployment processes for React Native and Expo projects.</p>
+
+<h4>Prerequisites</h4>
+<p>Before you start, ensure you have the following:</p>
+<ul>
+  <li>Node.js installed</li>
+  <li>Expo CLI installed (<code>npm install -g expo-cli</code>)</li>
+  <li>An Expo account</li>
+  <li>A working React Native or Expo project</li>
+</ul>
+
+<h4>Step-by-Step Guide</h4>
+
+<h5>1. Initialize Your Project</h5>
+<p>If you haven't already, initialize your Expo project:</p>
+<pre><code>expo init my-new-project
+cd my-new-project</code></pre>
+
+<h5>2. Install EAS CLI</h5>
+<p>Install the EAS CLI globally:</p>
+<pre><code>npm install -g eas-cli</code></pre>
+
+<h5>3. Configure EAS</h5>
+<p>Log in to your Expo account:</p>
+<pre><code>eas login</code></pre>
+<p>Run the EAS configuration command in your project directory:</p>
+<pre><code>eas build:configure</code></pre>
+<p>This creates an <code>eas.json</code> file in your project, where you can configure your build settings.</p>
+
+<h5>4. Build Your App</h5>
+<p>You can now build your app for different platforms. Run the following command to start a build for iOS:</p>
+<pre><code>eas build --platform ios</code></pre>
+<p>And for Android:</p>
+<pre><code>eas build --platform android</code></pre>
+
+<h5>5. Manage Build Profiles</h5>
+<p>Customize your build profiles in the <code>eas.json</code> file. You can create different profiles for development, staging, and production:</p>
+<pre><code>{
+  "build": {
+    "development": {
+      "releaseChannel": "development",
+      "distribution": "internal"
+    },
+    "production": {
+      "releaseChannel": "default",
+      "distribution": "store"
+    }
+  }
+}</code></pre>
+
+<h5>6. Monitoring and Debugging</h5>
+<p>Monitor your build progress on the Expo dashboard: <a href="https://expo.dev/accounts/YOUR-USERNAME/projects/YOUR-PROJECT/builds">Expo Build Dashboard</a></p>
+<p>You can also use the EAS CLI to check the status of your builds:</p>
+<pre><code>eas build:list</code></pre>
+
+<h5>7. Deploy Your App</h5>
+<p>Once your build is complete, you can deploy your app. For iOS, you'll need to submit your app to the App Store using Transporter or Xcode. For Android, you can upload the APK or AAB file directly to the Google Play Console.</p>
+
+<h4>Conclusion</h4>
+<p>Using EAS, you can streamline your app build and deployment process, ensuring a smooth transition from development to production. For more detailed configurations and advanced usage, refer to the <a href="https://docs.expo.dev/eas/">official EAS documentation</a>.</p>
+
+<h4>Additional Resources</h4>
+<ul>
+  <li><a href="https://docs.expo.dev/">Expo Documentation</a></li>
+  <li><a href="https://docs.expo.dev/build/eas-json/">EAS Build Configuration</a></li>
+  <li><a href="https://forums.expo.dev/">Expo Community Forums</a></li>
+</ul>
             <h3>Building for iOS with TestFlight</h3>
             <ol>
                 <li>Open your terminal and navigate to your project directory.</li>
